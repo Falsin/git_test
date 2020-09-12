@@ -1,0 +1,253 @@
+.paddingMargin(@padding, @margin) {
+  padding: @padding;
+  margin: @margin;
+}
+
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+html, body {
+  .size(100%, 100%);
+}
+
+body {
+  font-size: 14px;
+}
+
+#container {
+  .size(100%, 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  .paddingMargin(0, 0);
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav div {
+  margin-right: 12px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+#account {
+  font-weight: 900;
+  font-size: 1.14em;
+  border-radius: 50%;
+  .size(35px, 35px);
+  background: purple;
+}
+
+nav div a {
+  text-decoration: none;
+  color: hsl(0, 0%, 0%);
+}
+
+#account a {
+  color: white;
+  display: flex;
+  .size(100%, 100%);
+  justify-content: center;
+  align-items: center;
+}
+
+#gmail a:hover, #images a:hover {
+  text-decoration: underline;
+  color: hsl(0, 0%, 30%);
+}
+
+#apps a:hover {
+  filter: brightness(2);
+}
+
+#central {
+margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+}
+
+#central #mainBlock {
+  margin: 0 auto 0 auto;
+  .size(40%, 250px);
+}
+
+#mainBlock #logo {
+  display: block;
+  margin: 0 auto 0 auto;
+  height: 40%;
+}
+
+#searchBox {
+  position: relative;
+  top: 10%;
+  display: flex;
+  .size(100%,18%);
+}
+
+#searchBox input {
+  padding-left: 1%;
+  padding-right: 1%;
+  font-size: 1.5em;
+  flex-grow: 2;
+  outline:none;
+  border: none;
+  border-top: solid 1px #d4d6d9;
+  border-bottom: solid 1px #d4d6d9;
+}
+
+#searchBox:hover input {
+  box-shadow: 0 -1px 0.5px 0 hsl(216, 6%, 75%),
+              0 1px 0.5px 0 hsl(216, 6%, 75%);
+}
+
+#searchBox:hover  #search {
+  box-shadow: 0 -1px 0.5px 0 hsl(216, 6%, 75%),
+              0 1px 0.5px 0 hsl(216, 6%, 75%),
+              -1px 0 0.5px 0 hsl(216, 6%, 75%),
+}
+
+#searchBox:hover  #micr {
+  box-shadow: 0 -1px 0.5px 0 hsl(216, 6%, 75%),
+              0 1px 0.5px 0 hsl(216, 6%, 75%),
+              1px 0 0.5px 0 hsl(216, 6%, 75%),
+}
+
+#search {
+  border: solid 1px hsl(216, 6%, 84%);
+  border-right: none;
+  padding-left: 1%;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+#micr {
+  border: solid 1px #d4d6d9;
+  border-left: none;
+  padding-right: 1%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  cursor: pointer;
+}
+
+#buttons {
+  position: relative;
+  top: 22%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+#buttons * {
+  height: 100%;
+  padding: 2%;
+  background: hsl(235, 0%, 95%);
+  border: none;
+  font-size: 1.1em;
+  color: hsl(258, 4%, 40%);
+}
+
+#buttons :first-child {
+  margin-right: 2%;
+}
+
+#buttons :last-child {
+  margin-left: 2%;
+}
+
+footer * {
+  line-height: 50px;
+  color: hsl(0, 0%, 50%);
+}
+
+#left *, #right * {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+
+#right :last-child {
+  padding-right: 20px;
+}
+
+footer {
+  display: grid;
+  background: hsl(0, 0%, 95%);
+  grid-template-areas: 
+    "top top"
+    "left right"
+}
+
+#country {
+  font-size: 1.2em;
+  padding-left: 10px;
+  grid-area: top;
+  border-top: solid 1px hsl(0, 0%, 85%);
+  border-bottom: solid 1px hsl(0, 0%, 85%);
+}
+
+#left {
+  font-size: 1.2em;
+  grid-area: left;
+  display: flex;
+}
+
+#right {
+  font-size: 1.2em;
+  grid-area: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#left a:hover,
+#right a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+  footer {
+    grid-template-areas: 
+      "top"
+      "left"
+      "right"
+  }
+
+  #left, #right {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #central #mainBlock {
+    .size(90%, 250px);
+  }
+}
+
+@media screen and (max-width: 500px), screen and  (max-height: 600px) {
+  #left, #right, #country {
+    font-size: 1.1em;
+  }
+  footer * {
+    line-height: 30px;
+  }
+  #searchBox input {
+    font-size: 0.8em;
+  }
+  #central #mainBlock {
+    .size(70%, 200px);
+  }
+}
+
+@media screen and  (max-height: 450px) {
+  #central #mainBlock {
+    .size(60%, 200px);
+  }
+}

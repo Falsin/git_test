@@ -4,17 +4,49 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="container">
+	<div id="container">
 		<nav>
-			<div class="gmail"></div>
-			<div class="images"></div>
-			<div class="apps"></div>
-			<div class="account"></div>
+			<div id="gmail"><a href="#">Gmail</a></div>
+			<div id="images"><a href="#">Images</a></div>
+			<div id="apps"><a href="#" title="Google apps"><img src="images/icon.svg" alt=""></a></div>
+			<div id="account"><a href="#" title="Google Account">A</a></div>
 		</nav>
-		<div class="central"></div>
-		<footer></footer>
+
+		<div id="central">
+			<div id="mainBlock">
+				<img id="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google logo">
+				<div id="searchBox">
+					<img id="search" src="images/search.svg" alt="Search">
+					<input type="text" title="Search">
+					<img id="micr" src="images/micr.svg" alt="Search by voice" title="Search by voice">
+				</div>
+				
+				<div id="buttons">
+					<input type="button" id="btn1" value="Google Search">
+					<input type="button" id="btn2" value="I'm Feeling Lucky">
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div id="country">Russia</div>
+				<div id="left">
+					<a href="#">Advertising</a>
+					<a href="#">Business</a>
+					<a href="#">About</a>
+					<a href="#">How Search works</a>
+				</div>
+				<div id="right">
+					<a href="#">Privacy</a>
+					<a href="#">Terms</a>
+					<a href="#">Settings</a>
+				</div> 
+		</footer>
+		
+
 	</div>
 </body>
 </html>
